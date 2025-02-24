@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Weather Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   
+    <div class="background-shapes">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="container">
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Search city..." autocomplete="off">
+                <button class="search-btn" onclick="getWeatherByCity()">
+                    <i class="fas fa-search"></i> Search
+                </button>
+                <button class="search-btn" onclick="getLocation()">
+                    <i class="fas fa-location-arrow"></i>
+                </button>
+            </div>
+            <div class="suggestions" id="suggestions"></div>
+        </div>
+
+        <div class="weather-card" id="weatherCard">
+            <div class="current-weather">
+                <div class="weather-main">
+                    <h2 id="cityName" class="city-name">-</h2>
+                    <div class="temp"><span id="temperature">-</span></div>
+                    <div id="weatherDescription" class="description">-</div>
+                    <img id="weatherIcon" class="weather-icon" src="" alt="">
+                </div>
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <i class="fas fa-tint fa-2x"></i>
+                        <h3>Humidity</h3>
+                        <p id="humidity">-</p>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fas fa-wind fa-2x"></i>
+                        <h3>Wind Speed</h3>
+                        <p id="windSpeed">-</p>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fas fa-thermometer-half fa-2x"></i>
+                        <h3>Feels Like</h3>
+                        <p id="feelsLike">-</p>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fas fa-eye fa-2x"></i>
+                        <h3>Visibility</h3>
+                        <p id="visibility">-</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="forecast-title">5-Day Forecast</h3>
+            <div class="forecast" id="forecast"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
